@@ -12,9 +12,11 @@ pip
 ### Installation
 
 To install the necessary dependencies for this project, navigate to the project directory and run the following command in your terminal:
-<code> pip install -r requirements.txt </code>
+
+<code>pip install -r requirements.txt</code>
 
 ### Usage
 
 To run the listings script, use the following command:
-<code> python listings.py </code>
+
+<code>python listings.py</code>
