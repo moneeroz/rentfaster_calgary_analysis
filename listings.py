@@ -95,5 +95,27 @@ fig = px.bar(
 fig.update_xaxes(title_text="Quadrant")
 fig.update_yaxes(title_text="Average Price")
 
-# Show the plot
+# Calculate the average price per bedroom per quadrant
+average_price_per_bedroom = (
+    df.groupby(["quadrant", "bedrooms"])["price"].mean().reset_index()
+)
+print(average_price_by_quadrant)
+
+# Plot the data
+fig2 = px.bar(
+    average_price_per_bedroom,
+    x="quadrant",
+    y="price",
+    color="bedrooms",
+    title="Average Price by Quadrant and Number of Bedrooms",
+)
+
+# Customize the chart if needed (e.g., labels, colors)
+fig2.update_xaxes(title_text="Quadrant")
+fig2.update_yaxes(title_text="Average Price")
+fig2.update_layout(legend_title_text="Bedrooms")
+
+
+# Show the plots
 fig.show()
+fig2.show()
